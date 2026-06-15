@@ -14,3 +14,4 @@
 3. Generate the improved version.
 4. Save the result into the version library.
 5. Review analytics after repeated runs.
+6. Restart the app and confirm your saved versions persist.
