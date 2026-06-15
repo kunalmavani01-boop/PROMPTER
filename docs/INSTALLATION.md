@@ -24,3 +24,4 @@ python desktop.py
 - Windows build script: `scripts/build_windows.ps1`
 - macOS build script: `scripts/build_macos.sh`
 - Shared spec: `prompter.spec`
+- Build-only dependencies: `requirements-desktop.txt`
