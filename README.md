@@ -37,6 +37,7 @@ This starts the local server and opens the PROMPTER UI in the default browser.
 - Windows: `scripts/build_windows.ps1`
 - macOS: `scripts/build_macos.sh`
 - Shared PyInstaller config: `prompter.spec`
+- Build-only dependency list: `requirements-desktop.txt`
 - CI artifacts: `.github/workflows/desktop-build.yml`
 
 ## API
