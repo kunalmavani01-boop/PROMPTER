@@ -2,5 +2,5 @@
 set -euo pipefail
 
 python3 -m pip install -r requirements.txt
-python3 -m pip install pyinstaller
+python3 -m pip install -r requirements-desktop.txt
 pyinstaller --noconfirm prompter.spec
