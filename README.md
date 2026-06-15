@@ -1,71 +1,46 @@
-# 🎯 PROMPTER
+# PROMPTER
 
-**AI-powered prompt optimization and management toolkit** — Enhance, refine, and manage your LLM prompts with intelligent suggestions and version control.
+PROMPTER is a lightweight prompt optimization and management toolkit with a FastAPI backend and a simple browser UI.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## What is included
 
----
+- Prompt enhancement endpoint with structured improvement suggestions
+- Prompt templates for common workflows
+- Version tracking for saved prompts
+- Lightweight analytics for prompt improvement runs
+- Static dashboard served directly by the API
 
-## ✨ Features
-
-- **Prompt Enhancement** — AI-driven suggestions to improve clarity and effectiveness
-- **Version Control** — Track and compare prompt iterations
-- **Performance Analytics** — Measure prompt quality metrics
-- **Template Library** — Pre-built prompts for common use cases
-- **Integration Ready** — Works with OpenAI, Claude, Gemini, and more
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.8+ or Node.js 14+
-
-### Installation
+## Quick start
 
 ```bash
-# Clone the repository
-git clone https://github.com/kunalmavani01-boop/PROMPTER.git
-cd PROMPTER
-
-# Install dependencies
-npm install
-# or
+python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
+uvicorn main:app --reload
 ```
 
-### Usage
+Open `http://127.0.0.1:8000`.
 
-```bash
-# Start the application
-npm run start
-# or
-python main.py
+## API
+
+- `GET /health`
+- `POST /api/enhance`
+- `GET /api/templates`
+- `GET /api/versions`
+- `POST /api/versions`
+- `GET /api/versions/{version_id}`
+- `GET /api/analytics`
+
+## Project structure
+
+```text
+PROMPTER/
+|-- docs/
+|-- examples/
+|-- static/
+|-- tests/
+|-- main.py
+|-- requirements.txt
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-## 📖 Documentation
-
-- [Getting Started](./docs/GETTING_STARTED.md)
-- [API Reference](./docs/API.md)
-- [Examples](./examples/)
-- [FAQ](./docs/FAQ.md)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License — see [LICENSE](./LICENSE) file for details.
-
----
-
-Built with ❤️ by [Kunal Mavani](https://github.com/kunalmavani01-boop)
+See [docs/GETTING_STARTED.md](./docs/GETTING_STARTED.md) and [docs/API.md](./docs/API.md) for usage details.
