@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 
-project_root = Path(__file__).resolve().parent
+project_root = Path.cwd()
 datas = [
     (str(project_root / "static"), "static"),
     (str(project_root / "docs"), "docs"),
