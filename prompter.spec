@@ -1,5 +1,6 @@
 # PyInstaller spec for bundling PROMPTER as a desktop app on Windows and macOS.
 
+import sys
 from pathlib import Path
 
 
@@ -10,7 +11,12 @@ datas = [
     (str(project_root / "examples"), "examples"),
 ]
 
-hiddenimports = ["uvicorn.logging", "uvicorn.loops.auto", "uvicorn.protocols.http.auto"]
+hiddenimports = [
+    "uvicorn.logging",
+    "uvicorn.loops.auto",
+    "uvicorn.protocols.http.auto",
+    "pydantic_core._pydantic_core",
+]
 
 a = Analysis(
     ["desktop.py"],
@@ -28,19 +34,32 @@ pyz = PYZ(a.pure)
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
+    [],
+    exclude_binaries=True,
     [],
     name="PROMPTER",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
-    upx=True,
+    upx=False,
     console=False,
 )
-app = BUNDLE(
-    exe,
-    name="PROMPTER.app",
-    icon=None,
-    bundle_identifier="com.kunalmavani.prompter",
-)
+
+if sys.platform == "darwin":
+    app = BUNDLE(
+        exe,
+        a.binaries,
+        a.datas,
+        name="PROMPTER.app",
+        icon=None,
+        bundle_identifier="com.kunalmavani.prompter",
+    )
+else:
+    coll = COLLECT(
+        exe,
+        a.binaries,
+        a.datas,
+        strip=False,
+        upx=False,
+        name="PROMPTER",
+    )
