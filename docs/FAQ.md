@@ -1,7 +1,9 @@
 # FAQ
 
-**Q: How do I integrate with my LLM?**
-A: Use the API or SDK with your API keys.
+## Does PROMPTER call external LLM APIs right now?
 
-**Q: Is it free?**
-A: Yes, core is open source. LLM calls may incur costs.
+No. This version focuses on local prompt structuring, reusable templates, version storage, and analytics scaffolding.
+
+## Can I extend it to use OpenAI or other providers?
+
+Yes. The project already includes `openai` in the Python dependencies so provider-backed enhancement can be added cleanly.
