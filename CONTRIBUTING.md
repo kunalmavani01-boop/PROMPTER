@@ -1,40 +1,6 @@
-# 🤝 Contributing to PROMPTER
+# Contributing
 
-Thank you for your interest in contributing! We welcome contributions from the community.
-
-## How to Contribute
-
-### Reporting Bugs
-- Check if the issue already exists
-- Provide a clear description and reproduction steps
-- Include your environment details
-
-### Suggesting Features
-- Describe the feature and its use case
-- Explain why it would be beneficial
-- Provide examples if possible
-
-### Submitting Pull Requests
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature')`
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## Development Setup
-
-```bash
-# Clone and setup
-git clone https://github.com/yourusername/PROMPTER.git
-cd PROMPTER
-npm install
-```
-
-## Code Style
-- Follow ESLint configuration
-- Use meaningful variable and function names
-- Add comments for complex logic
-- Keep functions focused and testable
-
-## Questions?
-Feel free to open a discussion or email kunalmavani@outlook.com
+1. Create a branch for the change.
+2. Keep the API contract stable unless you update the docs in the same change.
+3. Add or update tests for backend behavior when you touch endpoints.
+4. Keep the UI lightweight and dependency-free unless there is a strong reason to add a framework.
