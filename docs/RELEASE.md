@@ -26,6 +26,8 @@ chmod +x scripts/build_macos.sh
 
 GitHub Actions runs `.github/workflows/desktop-build.yml` on `main` pushes and manual dispatches. It publishes desktop artifacts for both supported operating systems.
 
+Desktop packaging dependencies live in `requirements-desktop.txt` so the main runtime install remains lightweight.
+
 ## Data storage
 
 PROMPTER stores persistent user data in the platform app-data directory:
