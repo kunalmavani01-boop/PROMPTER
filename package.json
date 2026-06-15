@@ -1,14 +1,10 @@
 {
   "name": "prompter",
   "version": "1.0.0",
-  "description": "AI-powered prompt optimization toolkit",
-  "main": "index.js",
+  "description": "Prompt optimization toolkit with FastAPI backend and browser UI",
+  "private": true,
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "openai": "^4.0.0"
+    "start": "python -m uvicorn main:app --host 127.0.0.1 --port 8000",
+    "dev": "python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000"
   }
 }
