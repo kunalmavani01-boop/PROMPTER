@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 
-from main import app
+from main import app, store
 
 
 client = TestClient(app)
@@ -9,7 +9,9 @@ client = TestClient(app)
 def test_health() -> None:
     response = client.get("/health")
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+    payload = response.json()
+    assert payload["status"] == "ok"
+    assert payload["app"] == "PROMPTER"
 
 
 def test_enhance() -> None:
@@ -45,3 +47,16 @@ def test_versions_roundtrip() -> None:
     assert listed.status_code == 200
     versions = listed.json()["versions"]
     assert any(version["id"] == item["id"] for version in versions)
+
+
+def test_settings() -> None:
+    response = client.get("/api/settings")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["app_name"] == "PROMPTER"
+    assert "data_dir" in payload
+
+
+def test_store_file_exists() -> None:
+    store.load()
+    assert store.path.parent.exists()
