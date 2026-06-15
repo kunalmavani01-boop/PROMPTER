@@ -1,35 +1,32 @@
 # API Reference
 
-## Overview
+## `POST /api/enhance`
 
-PROMPTER provides a RESTful API and Python SDK for prompt management.
+Enhances a prompt into a more structured version and returns simple quality metrics.
 
-## Endpoints
+### Request
 
-### POST /api/enhance
-Enhance a prompt with AI suggestions.
-
-**Request:**
 ```json
 {
-  "prompt": "Your prompt here",
-  "model": "gpt-4",
-  "options": {}
+  "prompt": "Summarize our customer interview notes.",
+  "goal": "Improve specificity",
+  "audience": "GPT-4 class model",
+  "constraints": ["Return bullet points", "Keep it under 200 words"]
 }
 ```
 
-**Response:**
-```json
-{
-  "enhanced": "Improved prompt...",
-  "suggestions": [...],
-  "metrics": {}
-}
-```
+## `GET /api/templates`
 
-### Other endpoints
-- GET /api/templates
-- POST /api/versions
-- GET /api/analytics
+Returns the built-in prompt templates.
 
-See full docs in code or Postman collection (coming soon).
+## `GET /api/versions`
+
+Returns all saved prompt versions.
+
+## `POST /api/versions`
+
+Stores a version with title, notes, tags, and prompt text.
+
+## `GET /api/analytics`
+
+Returns aggregate run statistics for enhancement requests.
