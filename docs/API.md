@@ -30,3 +30,7 @@ Stores a version with title, notes, tags, and prompt text.
 ## `GET /api/analytics`
 
 Returns aggregate run statistics for enhancement requests.
+
+## `GET /api/settings`
+
+Returns runtime settings including the data directory, host, port, and application version.
