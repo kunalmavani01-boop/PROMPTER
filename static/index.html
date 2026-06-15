@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROMPTER</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Prompt Operations Toolkit</p>
+        <h1>PROMPTER</h1>
+        <p class="lede">
+          Enhance prompts, save versions, browse templates, and track quality from one lightweight interface.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Enhance Prompt</h2>
+          <label for="prompt">Prompt</label>
+          <textarea id="prompt" placeholder="Paste the prompt you want to improve."></textarea>
+          <label for="goal">Goal</label>
+          <input id="goal" placeholder="What should the improved prompt optimize for?" />
+          <label for="audience">Audience</label>
+          <input id="audience" placeholder="Who or what model is this prompt for?" />
+          <label for="constraints">Constraints</label>
+          <input id="constraints" placeholder="Comma-separated constraints" />
+          <button id="enhanceButton">Generate Enhancement</button>
+          <pre id="enhancedOutput">Your enhanced prompt will appear here.</pre>
+        </article>
+
+        <article class="panel">
+          <h2>Prompt Library</h2>
+          <div id="templates" class="stack"></div>
+        </article>
+
+        <article class="panel">
+          <h2>Save Version</h2>
+          <input id="versionTitle" placeholder="Version title" />
+          <input id="versionTags" placeholder="Tags, separated by commas" />
+          <textarea id="versionPrompt" placeholder="Prompt text to store as a version."></textarea>
+          <textarea id="versionNotes" placeholder="Notes about this version."></textarea>
+          <button id="saveVersionButton">Save Version</button>
+          <div id="versions" class="stack"></div>
+        </article>
+
+        <article class="panel">
+          <h2>Analytics</h2>
+          <div id="analytics" class="metric-grid"></div>
+        </article>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
